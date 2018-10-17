@@ -1,0 +1,14 @@
+{
+  "name": "canvas-worker-test-app",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "",
+  "devDependencies": {
+    "@types/node": "10.11.7"
+  }
+}

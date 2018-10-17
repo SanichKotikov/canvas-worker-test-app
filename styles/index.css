@@ -1,0 +1,153 @@
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+:root {
+  --padding: 10px;
+}
+
+body {
+  margin: 0;
+  padding: calc(var(--padding) * 2);
+  font-family: system, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  color: #222;
+  background: #eee;
+  box-sizing: border-box;
+}
+
+/* RADIO */
+
+input[type=radio] {
+  display: none;
+}
+
+input[type=radio] + label {
+  display: block;
+  width: 100%;
+  padding: var(--padding) var(--padding) calc(var(--padding) + 2px);
+  font: inherit;
+  line-height: 1.2;
+  background: #eee;
+  border-bottom: 1px solid #999;
+  border-top: 1px solid #fff;
+  border-radius: 4px;
+}
+
+input[type=radio]:checked + label {
+  background: #e6e6e6;
+  border-top-color: #999;
+  border-bottom-color: #fff;
+}
+
+/* SELECT */
+
+.select {
+  position: relative;
+  display: inline-block;
+}
+
+.select:after {
+  content: '\25bc';
+  position: absolute;
+  top: 16px;
+  right: 10px;
+  font-size: 12px;
+  line-height: 1;
+  color: #aaa;
+  pointer-events: none;
+}
+
+select {
+  width: 100%;
+  padding: var(--padding) var(--padding) calc(var(--padding) + 2px);
+  font: inherit;
+  line-height: 1.2;
+  border: 1px solid #ccc;
+  border-top-color: #999;
+  border-radius: 4px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+/* LAYOUT */
+
+.title {
+  margin: 0 0 40px;
+  font-weight: 400;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 1024px) {
+  .main {
+    flex-direction: row;
+  }
+}
+
+.side {
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .side {
+    width: 200px;
+    padding-right: var(--padding);
+  }
+}
+
+.side > * {
+  margin-bottom: calc(var(--padding) / 2);
+}
+
+.content {
+  flex: 1;
+}
+
+.content-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--padding);
+}
+
+@media (min-width: 1024px) {
+  .content-header {
+    justify-content: flex-start;
+  }
+}
+
+.content-header > .select {
+  width: 49%;
+}
+
+@media (min-width: 1024px) {
+  .content-header > .select {
+    width: 160px;
+    margin-right: calc(var(--padding) / 2);
+  }
+}
+
+/* CANVAS */
+
+#canvas {
+  width: 100%;
+  max-width: 100%;
+  border: 1px solid #999;
+  border-radius: 4px;
+  background: #fff;
+}
+
+@media (min-width: 1024px) {
+  #canvas {
+    width: 600px;
+  }
+}
